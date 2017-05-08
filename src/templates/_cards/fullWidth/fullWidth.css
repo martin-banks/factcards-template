@@ -1,0 +1,32 @@
+.common {
+	/*composes: reset from '../../../boilerplate.css';*/
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;  
+}
+
+
+.card {
+	position: relative;
+	border: solid 1px #ddd;
+	border-radius: 4px;
+	margin: 4px;
+	/*padding: 24px 8px;*/
+	text-align: center;
+  box-sizing: border-box;  
+  width: 100%;
+
+}
+
+.card p {
+	padding: 24px;
+	width: 50%;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 400px) {
+	.card p {
+		width: 100%;
+
+	}
+}

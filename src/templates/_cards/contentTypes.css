@@ -1,0 +1,86 @@
+.common {
+	margin: 0;
+	padding: 0;
+}
+
+.kicker {
+	composes: common;
+	margin-bottom: 8px;
+
+}
+
+.kicker code {
+	background-color: #444;
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 2px;
+	font-family: 'Guardian Sans', sans-serif;
+	font-size: 12px;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+
+.bigNumber {
+	composes: common;
+	font-family: "Guardian Sans Cond", "Guardian Sans", sans-serif;
+	font-size: 60px;
+	font-weight: 900;
+	font-weight: bolder;
+	line-height: 1;
+	margin-bottom: 16px;
+}
+
+@media screen and (min-width: 500px) {
+	.bigNumber {
+		font-size: 80px;
+		margin-bottom: 24px;
+	}
+
+	.card {
+		width: 180px;
+	}
+
+}
+
+
+
+.factText {
+	composes: common;
+	font-family: "Merriweather", georgia, serif;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+[data-type="FullWidthCard"] .factText {
+	width: 80%;
+	text-align: left
+}
+
+
+.sideImg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	/*height: 100%;*/
+	width: 50%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	/*margin-bottom: 24px;*/
+}
+
+@media screen and (max-width: 400px) {
+	.sideImg {
+		position: relative;
+		width: 100%;
+		height: auto;
+		padding-bottom: 80%;
+	}
+
+	[data-type="FullWidthCard"] .factText {
+		width: 100%;
+		text-align: left
+	}
+}

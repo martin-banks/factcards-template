@@ -1,0 +1,54 @@
+.common {
+	composes: reset from '../../../boilerplate.css';
+}
+
+.card {
+	composes: common;
+	border: solid 1px #ddd;
+	border-radius: 4px;
+	margin: 4px;
+	padding: 24px;
+	text-align: center;
+	flex: 1;
+	min-width: 250px;
+	vertical-align: top;
+}
+
+.contentWrapper {
+	composes: common;
+}
+
+.kicker {
+	composes: common;
+	margin-bottom: 16px;
+
+}
+
+.kicker code {
+	background-color: #444;
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 2px;
+	font-family: 'Guardian Sans', sans-serif;
+	font-size: 12px;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+
+.bigNumber {
+	composes: common;
+	font-size: 80px;
+	font-weight: bolder;
+	line-height: 1;
+	margin-bottom: 24px;
+}
+
+.factText {
+	composes: common;
+	font-family: "Merriweather", georgia, serif;
+	font-size: 18px;
+	line-height: 24px;
+
+}

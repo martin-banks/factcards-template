@@ -1,0 +1,82 @@
+/* css */
+.common {
+	composes: reset from './boilerplate.css';
+}
+
+/*.cardContainer {
+	composes: common;
+	position: relative;
+	display: inline-block;
+	display: flex;
+	flex-direction: row;
+	-webkit-flex: 1;
+	flex: 1;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	background: lightblue;
+	align-items: flex-start;
+	align-content: flex-start;
+	width: 500px;
+	height: auto;
+}*/
+
+
+.cardContainer {
+	padding: 0;
+  margin: 0;
+
+  -ms-box-orient: horizontal;
+/*  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;*/
+  display: inline-flex;
+  flex-wrap: wrap;
+  
+	/*-webkit-flex-wrap: wrap;*/
+  flex-wrap: wrap;
+}
+
+
+
+
+.titleWrapper {
+	padding: 0 32px;
+	padding-top: 32px;
+}
+
+.kicker {
+	composes: common;
+	margin-bottom: 8px;
+
+}
+
+.kicker code {
+	background-color: #268dce;
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 2px;
+	font-family: 'Guardian Sans', sans-serif;
+	font-size: 12px;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.title {
+	composes: common;
+	font-weight: 300;
+	margin-bottom: 16px;
+	font-family: "Guardian Sans Cond", "Guardian Sans", sans-serif;
+	font-weight: 800;
+	font-size: 28px
+}
+
+.intro {
+	composes: common;
+	font-weight: 400;
+	margin-bottom: 24px;
+	font-size: 18px;
+	line-height: 24px;
+}
