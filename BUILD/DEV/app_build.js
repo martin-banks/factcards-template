@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -69,10 +69,45 @@
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__content_content__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentTypes_css__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__contentTypes_css__);
 
 
-const STATE = {
+var ContentTypes = {
+	kicker: function kicker(value) {
+		return '<div class="' + __WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.kicker + '"><code>' + value + '</code></div>';
+	},
+	bigNumber: function bigNumber(value) {
+		return '<p class="' + __WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.bigNumber + '">' + value + '</p>';
+	},
+	factText: function factText(value) {
+		return '<p class="' + __WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.factText + '">' + value + '</p>';
+	},
+	image: function image(value) {
+		return '<img class="' + __WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.image + '" src="' + value.source + '" alt="' + value.alt + '" />';
+	},
+	sideImg: function sideImg(value) {
+		return '<div class="' + __WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.sideImg + '" style="background-image: url(' + value.source + ')"></div>';
+	}
+};
+
+/* harmony default export */ exports["a"] = ContentTypes;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/d2aaa8ba43c24397614e569d9ecd42f5.jpg";
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__content_content__ = __webpack_require__(9);
+
+
+var STATE = {
 	kicker: 'Kicker text',
 	title: 'Fact cards title',
 	intro: 'Fact cards introduction',
@@ -84,13 +119,55 @@ const STATE = {
 /* harmony default export */ exports["a"] = STATE;
 
 /***/ },
-/* 1 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__numberCard_css__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fullWidth_css__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fullWidth_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__fullWidth_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentTypes__ = __webpack_require__(0);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var FullWidthCard = function () {
+	function FullWidthCard(card) {
+		_classCallCheck(this, FullWidthCard);
+
+		this.cardStyle = card.cardStyle;
+		this.content = card.content;
+		this.size = card.size || 1;
+	}
+
+	_createClass(FullWidthCard, [{
+		key: 'render',
+		value: function render() {
+			return '<div class="' + __WEBPACK_IMPORTED_MODULE_0__fullWidth_css___default.a.card + ' "  >\n\t\t\t<div class="' + __WEBPACK_IMPORTED_MODULE_0__fullWidth_css___default.a.contentWrapper + '" >\n\t\t\t\t' + this.content.map(function (elem) {
+				return __WEBPACK_IMPORTED_MODULE_1__contentTypes__["a" /* default */][elem.type](elem.value);
+			}).join('') + ' \n\t\t\t</div>\n\t\t</div>';
+		}
+	}]);
+
+	return FullWidthCard;
+}();
+
+/* harmony default export */ exports["a"] = FullWidthCard;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__numberCard_css__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__numberCard_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__numberCard_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentTypes__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentTypes__ = __webpack_require__(0);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -101,42 +178,46 @@ const STATE = {
 // 	image: value => `<img src="${value.source}" alt="${value.alt}" />`,
 // }
 
-class NumberCard {
-	constructor(card) {
+var NumberCard = function () {
+	function NumberCard(card) {
+		_classCallCheck(this, NumberCard);
+
 		this.cardStyle = card.cardStyle;
 		this.content = card.content;
 		this.size = card.size || 1;
 	}
 
-	render() {
-		return `<div class="${__WEBPACK_IMPORTED_MODULE_0__numberCard_css___default.a.card}" data-size="${this.size > 1 ? 'full' : 'small'}" data-type="${this.cardStyle}">
-			<div class="${__WEBPACK_IMPORTED_MODULE_0__numberCard_css___default.a.contentWrapper}" >
-				${this.content.map(elem => __WEBPACK_IMPORTED_MODULE_1__contentTypes__["a" /* default */][elem.type](elem.value)).join('')}
-			</div>
-		</div>`;
-	}
+	_createClass(NumberCard, [{
+		key: 'render',
+		value: function render() {
+			return '<div class="' + __WEBPACK_IMPORTED_MODULE_0__numberCard_css___default.a.card + '" data-size="' + (this.size > 1 ? 'full' : 'small') + '" data-type="' + this.cardStyle + '">\n\t\t\t<div class="' + __WEBPACK_IMPORTED_MODULE_0__numberCard_css___default.a.contentWrapper + '" >\n\t\t\t\t' + this.content.map(function (elem) {
+				return __WEBPACK_IMPORTED_MODULE_1__contentTypes__["a" /* default */][elem.type](elem.value);
+			}).join('') + '\n\t\t\t</div>\n\t\t</div>';
+		}
+	}]);
 
-}
+	return NumberCard;
+}();
 
 /* harmony default export */ exports["a"] = NumberCard;
 
 /***/ },
-/* 2 */
+/* 5 */
 /***/ function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 module.exports = {"common":"app__common___JWRTf boilerplate__reset___GlCEE","cardContainer":"app__cardContainer___2PAcP","titleWrapper":"app__titleWrapper___1kCHL","kicker":"app__kicker___2klhx app__common___JWRTf boilerplate__reset___GlCEE","title":"app__title___1kFDE app__common___JWRTf boilerplate__reset___GlCEE","intro":"app__intro___2HPmW app__common___JWRTf boilerplate__reset___GlCEE"};
 
 /***/ },
-/* 3 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__images_test_jpg__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__images_test_jpg__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__images_test_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__images_test_jpg__);
 
 
-const FullWidthCard = {
+var FullWidthCard = {
 	cardStyle: 'FullWidthCard',
 	backgroundImage: '',
 	backgroundColor: '',
@@ -157,17 +238,29 @@ const FullWidthCard = {
 /* harmony default export */ exports["a"] = FullWidthCard;
 
 /***/ },
-/* 4 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-const BigNumberCard = {
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__images_test_jpg__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__images_test_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__images_test_jpg__);
+
+
+var BigNumberCard = {
 	cardStyle: 'number',
 	backgroundImage: '',
 	backgroundColor: '',
 	size: 1,
 
-	content: [{
+	content: [
+	// {
+	// 	type: 'image',
+	// 	value: {
+	// 		source: Image,
+	// 		alt: 'blah',
+	// 	},
+	// },
+	{
 		type: 'bigNumber',
 		value: '123'
 	}, {
@@ -179,11 +272,11 @@ const BigNumberCard = {
 /* harmony default export */ exports["a"] = BigNumberCard;
 
 /***/ },
-/* 5 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-const BigNumberCard2 = {
+var BigNumberCard2 = {
 	cardStyle: 'number',
 	backgroundImage: '',
 	backgroundColor: '',
@@ -201,18 +294,18 @@ const BigNumberCard2 = {
 /* harmony default export */ exports["a"] = BigNumberCard2;
 
 /***/ },
-/* 6 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cards_number__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cards_number2__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cards_fullWidth__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cards_number__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cards_number2__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cards_fullWidth__ = __webpack_require__(6);
 
 
 
 
-const content = {
+var content = {
 	cards: [__WEBPACK_IMPORTED_MODULE_0__cards_number__["a" /* default */], __WEBPACK_IMPORTED_MODULE_1__cards_number2__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2__cards_fullWidth__["a" /* default */]]
 
 };
@@ -220,54 +313,36 @@ const content = {
 /* harmony default export */ exports["a"] = content;
 
 /***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentTypes_css__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__contentTypes_css__);
-
-
-const ContentTypes = {
-	kicker: value => `<div class="${__WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.kicker}"><code>${value}</code></div>`,
-	bigNumber: value => `<p class="${__WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.bigNumber}">${value}</p>`,
-	factText: value => `<p class="${__WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.factText}">${value}</p>`,
-	image: value => `<img src="${value.source}" alt="${value.alt}" />`,
-	sideImg: value => `<div class="${__WEBPACK_IMPORTED_MODULE_0__contentTypes_css___default.a.sideImg}" style="background-image: url(${value.source})"></div>`
-};
-
-/* harmony default export */ exports["a"] = ContentTypes;
-
-/***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"common":"contentTypes__common___w04bs","kicker":"contentTypes__kicker___R94iu contentTypes__common___w04bs","bigNumber":"contentTypes__bigNumber___tvvEQ contentTypes__common___w04bs","card":"contentTypes__card___1cIfe","factText":"contentTypes__factText___19ZeM contentTypes__common___w04bs","sideImg":"contentTypes__sideImg___rI4Zk"};
+module.exports = {"common":"contentTypes__common___w04bs","kicker":"contentTypes__kicker___R94iu contentTypes__common___w04bs","bigNumber":"contentTypes__bigNumber___tvvEQ contentTypes__common___w04bs","card":"contentTypes__card___1cIfe","factText":"contentTypes__factText___19ZeM contentTypes__common___w04bs","image":"contentTypes__image___23VYR","sideImg":"contentTypes__sideImg___rI4Zk"};
 
 /***/ },
-/* 9 */
+/* 11 */
+/***/ function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"common":"fullWidth__common___2UxXt","card":"fullWidth__card___3QtKq"};
+
+/***/ },
+/* 12 */
 /***/ function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 module.exports = {"common":"numberCard__common____DWoP","card":"numberCard__card___26wJK","flex1":"numberCard__flex1___1ik2R","flex2":"numberCard__flex2___2GUxD","flex3":"numberCard__flex3___3Q_mj","flex4":"numberCard__flex4___3QktS","flex5":"numberCard__flex5___1KGxC","contentWrapper":"numberCard__contentWrapper___1Z-WK numberCard__common____DWoP"};
 
 /***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "images/d2aaa8ba43c24397614e569d9ecd42f5.jpg";
-
-/***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_css__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_css__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__state__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_cards_number_numberCard__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__templates_cards_fullWidth_fullWidth__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__state__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_cards_number_numberCard__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__templates_cards_fullWidth_fullWidth__ = __webpack_require__(3);
 
 
 // import * as util from './functions/utility'
@@ -276,61 +351,19 @@ module.exports = __webpack_require__.p + "images/d2aaa8ba43c24397614e569d9ecd42f
 
 
 // const { isMobileDevice } = util // true or false
-const APP = document.querySelector(__WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].appid);
+var APP = document.querySelector(__WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].appid);
 
 function buildCards() {
-	const allCards = __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].content.cards.map(card => {
+	var allCards = __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].content.cards.map(function (card) {
 		if (card.cardStyle === 'number') return new __WEBPACK_IMPORTED_MODULE_2__templates_cards_number_numberCard__["a" /* default */](card);
 		if (card.cardStyle === 'FullWidthCard') return new __WEBPACK_IMPORTED_MODULE_3__templates_cards_fullWidth_fullWidth__["a" /* default */](card);
 	});
-	return `
-		<section class="${__WEBPACK_IMPORTED_MODULE_0__app_css___default.a.titleWrapper}">
-			<div class="${__WEBPACK_IMPORTED_MODULE_0__app_css___default.a.kicker}"><code>${__WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].kicker}</code></div>
-			<h2 class="${__WEBPACK_IMPORTED_MODULE_0__app_css___default.a.title}">${__WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].title}</h2>
-			<h4 class="${__WEBPACK_IMPORTED_MODULE_0__app_css___default.a.intro}">${__WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].intro}</h4>
-		</section>
-		<section class="${__WEBPACK_IMPORTED_MODULE_0__app_css___default.a.cardContainer}">${allCards.map(card => card.render()).join('')}</section>
-		`;
+	return '\n\t\t<section class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.titleWrapper + '">\n\t\t\t<div class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.kicker + '"><code>' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].kicker + '</code></div>\n\t\t\t<h2 class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.title + '">' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].title + '</h2>\n\t\t\t<h4 class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.intro + '">' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].intro + '</h4>\n\t\t</section>\n\t\t<section class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.cardContainer + '">' + allCards.map(function (card) {
+		return card.render();
+	}).join('') + '</section>\n\t\t';
 }
 
 APP.innerHTML = buildCards();
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fullWidth_css__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fullWidth_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__fullWidth_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__contentTypes__ = __webpack_require__(7);
-
-
-
-class FullWidthCard {
-	constructor(card) {
-		this.cardStyle = card.cardStyle;
-		this.content = card.content;
-		this.size = card.size || 1;
-	}
-
-	render() {
-		return `<div class="${__WEBPACK_IMPORTED_MODULE_0__fullWidth_css___default.a.card} "  >
-			<div class="${__WEBPACK_IMPORTED_MODULE_0__fullWidth_css___default.a.contentWrapper}" >
-				${this.content.map(elem => __WEBPACK_IMPORTED_MODULE_1__contentTypes__["a" /* default */][elem.type](elem.value)).join('')} 
-			</div>
-		</div>`;
-	}
-
-}
-
-/* harmony default export */ exports["a"] = FullWidthCard;
-
-/***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-module.exports = {"common":"fullWidth__common___2UxXt","card":"fullWidth__card___3QtKq"};
 
 /***/ }
 /******/ ]);

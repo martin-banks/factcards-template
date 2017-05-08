@@ -46,6 +46,7 @@
 .contentWrapper {
 	composes: common;
 	display: inline-block;
+	position: relative;
 }
 
 [data-type="FullWidthCard"] .contentWrapper {

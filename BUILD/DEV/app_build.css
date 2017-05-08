@@ -132,6 +132,7 @@
 
 .numberCard__contentWrapper___1Z-WK {
 	display: inline-block;
+	position: relative;
 }
 
 [data-type="FullWidthCard"] .numberCard__contentWrapper___1Z-WK {
@@ -201,6 +202,12 @@
 [data-type="FullWidthCard"] .contentTypes__factText___19ZeM {
 	width: 80%;
 	text-align: left
+}
+
+.contentTypes__image___23VYR {
+	position: relative;
+	width: 100%;
+	height: auto;
 }
 
 

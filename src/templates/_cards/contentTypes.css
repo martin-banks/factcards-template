@@ -58,6 +58,12 @@
 	text-align: left
 }
 
+.image {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
 
 .sideImg {
 	position: absolute;
