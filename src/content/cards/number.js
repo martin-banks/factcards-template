@@ -7,13 +7,6 @@ const BigNumberCard = {
 	size: 1,
 
 	content: [
-		// {
-		// 	type: 'image',
-		// 	value: {
-		// 		source: Image,
-		// 		alt: 'blah',
-		// 	},
-		// },
 		{
 			type: 'bigNumber',
 			value: '123',

@@ -252,15 +252,7 @@ var BigNumberCard = {
 	backgroundColor: '',
 	size: 1,
 
-	content: [
-	// {
-	// 	type: 'image',
-	// 	value: {
-	// 		source: Image,
-	// 		alt: 'blah',
-	// 	},
-	// },
-	{
+	content: [{
 		type: 'bigNumber',
 		value: '123'
 	}, {
@@ -284,7 +276,7 @@ var BigNumberCard2 = {
 
 	content: [{
 		type: 'bigNumber',
-		value: '123'
+		value: '123456'
 	}, {
 		type: 'factText',
 		value: 'Facts about something interesting'
@@ -358,9 +350,9 @@ function buildCards() {
 		if (card.cardStyle === 'number') return new __WEBPACK_IMPORTED_MODULE_2__templates_cards_number_numberCard__["a" /* default */](card);
 		if (card.cardStyle === 'FullWidthCard') return new __WEBPACK_IMPORTED_MODULE_3__templates_cards_fullWidth_fullWidth__["a" /* default */](card);
 	});
-	return '\n\t\t<section class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.titleWrapper + '">\n\t\t\t<div class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.kicker + '"><code>' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].kicker + '</code></div>\n\t\t\t<h2 class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.title + '">' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].title + '</h2>\n\t\t\t<h4 class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.intro + '">' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].intro + '</h4>\n\t\t</section>\n\t\t<section class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.cardContainer + '">' + allCards.map(function (card) {
+	return '<section class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.titleWrapper + '">\n\t\t<div class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.kicker + '"><code>' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].kicker + '</code></div>\n\t\t<h2 class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.title + '">' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].title + '</h2>\n\t\t<h4 class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.intro + '">' + __WEBPACK_IMPORTED_MODULE_1__state__["a" /* default */].intro + '</h4>\n\t</section>\n\t<section class="' + __WEBPACK_IMPORTED_MODULE_0__app_css___default.a.cardContainer + '">' + allCards.map(function (card) {
 		return card.render();
-	}).join('') + '</section>\n\t\t';
+	}).join('') + '</section>';
 }
 
 APP.innerHTML = buildCards();

@@ -14,14 +14,12 @@ function buildCards() {
 		if (card.cardStyle === 'number') return new NumberCard(card)
 		if (card.cardStyle === 'FullWidthCard') return new FullWidthCard(card)
 	})
-	return `
-		<section class="${Styles.titleWrapper}">
-			<div class="${Styles.kicker}"><code>${STATE.kicker}</code></div>
-			<h2 class="${Styles.title}">${STATE.title}</h2>
-			<h4 class="${Styles.intro}">${STATE.intro}</h4>
-		</section>
-		<section class="${Styles.cardContainer}">${allCards.map(card => card.render()).join('')}</section>
-		`
+	return `<section class="${Styles.titleWrapper}">
+		<div class="${Styles.kicker}"><code>${STATE.kicker}</code></div>
+		<h2 class="${Styles.title}">${STATE.title}</h2>
+		<h4 class="${Styles.intro}">${STATE.intro}</h4>
+	</section>
+	<section class="${Styles.cardContainer}">${allCards.map(card => card.render()).join('')}</section>`
 }
 
 

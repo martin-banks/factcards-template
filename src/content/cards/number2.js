@@ -7,7 +7,7 @@ const BigNumberCard2 = {
 	content: [
 		{
 			type: 'bigNumber',
-			value: '123',
+			value: '123456',
 		},
 		{
 			type: 'factText',
